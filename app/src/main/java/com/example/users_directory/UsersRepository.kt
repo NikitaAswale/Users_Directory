@@ -1,16 +1,13 @@
 package com.example.users_directory
 
-class UsersRepository {
+import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
+import javax.inject.Singleton
 
-    private val api = RetrofitInstance.api
-
-    suspend fun getUsers(): List<Users> {
-        return try {
-            api.getUsers()
-        } catch (e: Exception) {
-            e.printStackTrace()
-            emptyList()
-        }
-    }
+@Singleton
+class UsersRepository @Inject constructor(
+    private val usersDao: UsersDao
+){
+     fun getUsers(): Flow<List<Users>> = usersDao.getAllUsers()
 
 }
