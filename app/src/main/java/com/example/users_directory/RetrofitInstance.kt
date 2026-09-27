@@ -7,7 +7,7 @@ import kotlin.jvm.java
 
 object RetrofitInstance {
 
-    private const val BASE_URL = ""
+    private const val BASE_URL = "https://jsonplaceholder.typicode.com/"
 
     val api:APIService by lazy {
         Retrofit.Builder()

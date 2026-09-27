@@ -36,11 +36,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun UsersDirectory_UI(viewModel: UsersViewModel = viewModel()) {
+fun UsersDirectory_UI(viewModel: UsersViewModel = hiltViewModel()) {
 
     val users by viewModel.users.collectAsState()
 
